@@ -1,1 +1,2 @@
 Tekstfil lagd på github
+Tekst lagt til i VSC
