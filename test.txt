@@ -1,3 +1,2 @@
 Tekstfil lagd på github
-Tekst lagt til i VSC
-iluliuykuyrtu
+Tekst lagt til i Visual Studio Code
