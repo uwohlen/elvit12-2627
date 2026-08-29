@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='icon' href='media/favicon.ico'>
+  <title>Bildelotto</title>
+  <style>
+    img {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bildelotto</h1>
+  <p>Snu to bilder: om de er like vil de bli stående, om de er ulike vil de snus tilbake. Finn alle par!</p>
+  <img src='media/kryss.png' alt='Bilde av et kryss' class="hjerte">
+  <img src='media/kryss.png' alt='Bilde av et kryss' class="hjerte">
+  <img src='media/kryss.png' alt='Bilde av et kryss' class="sirkel">
+  <br>
+  <img src='media/kryss.png' alt='Bilde av et kryss' class="sirkel">
+  <img src='media/kryss.png' alt='Bilde av et kryss' class="trekant">
+  <img src='media/kryss.png' alt='Bilde av et kryss' class="trekant">
+  <script>
+    const bilder = document.querySelectorAll('img');
+    let valgtBilde = null;
+
+    bilder.forEach(bilde => {
+      bilde.addEventListener('click', () => {
+        if (bilde.src.includes('kryss.png')) {
+          bilde.src = `media/${bilde.className}.png`;
+          if (!valgtBilde) {
+            valgtBilde = bilde;
+          } else {
+            if (valgtBilde.className === bilde.className) {
+              valgtBilde = null;
+            } else {
+              setTimeout(() => {
+                valgtBilde.src = 'media/kryss.png';
+                bilde.src = 'media/kryss.png';
+                valgtBilde = null;
+              }, 1000);
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

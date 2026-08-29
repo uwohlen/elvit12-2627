@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='icon' href='media/favicon.ico'>
+  <title>Bildelotto</title>
+  <style>
+    img {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bildelotto</h1>
+  <p>Snu to bilder: om de er like vil de bli stående, om de er ulike vil de snus tilbake. Finn alle par!</p>
+  <img id="bilde1" src='media/kryss.png' alt='Bilde av et kryss' class="hjerte">
+  <img id="bilde2" src='media/kryss.png' alt='Bilde av et kryss' class="hjerte">
+  <img id="bilde3" src='media/kryss.png' alt='Bilde av et kryss' class="sirkel">
+  <script>
+    let bilde1EL = document.getElementById('bilde1');
+    let bilde2EL = document.getElementById('bilde2');
+    let bilde3EL = document.getElementById('bilde3');
+
+    bilde1EL.addEventListener('click', snuFunk1);
+    bilde2EL.addEventListener('click', snuFunk2);
+    bilde3EL.addEventListener('click', snuFunk3);
+
+    function snuFunk1() {
+      bilde1EL.src = 'media/hjerte.png';
+    }
+
+    function snuFunk2() {
+      bilde2EL.src = 'media/hjerte.png';
+    }
+
+    function snuFunk3() {
+      bilde3EL.src = 'media/sirkel.png';
+    }
+  </script>
+</body>
+</html>
