@@ -17,13 +17,19 @@
 <body>
   <h1>Bildelotto</h1>
   <p>Snu to bilder: om de er like vil de bli stående, om de er ulike vil de snus tilbake. Finn alle par!</p>
-  <img id="bilde1" src='media/kryss.png' alt='Bilde av et kryss' class="hjerte">
-  <img id="bilde2" src='media/kryss.png' alt='Bilde av et kryss' class="hjerte">
-  <img id="bilde3" src='media/kryss.png' alt='Bilde av et kryss' class="sirkel">
+  <img id="bilde1ID" src='media/kryss.png' alt='Bilde av et kryss' class="hjerte">
+  <img id="bilde2ID" src='media/kryss.png' alt='Bilde av et kryss' class="hjerte">
+  <img id="bilde3ID" src='media/kryss.png' alt='Bilde av et kryss' class="sirkel">
+
+  <p>Resultat: <span id="resultatID"></span></p>
   <script>
-    let bilde1EL = document.getElementById('bilde1');
-    let bilde2EL = document.getElementById('bilde2');
-    let bilde3EL = document.getElementById('bilde3');
+
+    let bilde1EL = document.getElementById('bilde1ID');
+    let bilde2EL = document.getElementById('bilde2ID');
+    let bilde3EL = document.getElementById('bilde3ID');
+    let resultatEL = document.getElementById('resultatID');
+    let bilde1 = "";
+    let bilde2 = "";
 
     bilde1EL.addEventListener('click', snuFunk1);
     bilde2EL.addEventListener('click', snuFunk2);
@@ -31,14 +37,69 @@
 
     function snuFunk1() {
       bilde1EL.src = 'media/hjerte.png';
+      if (bilde1 === "") {
+        bilde1 = bilde1EL;
+        resultatEL.textContent = "Snu et bilde til!";
+      }
+      else {
+        bilde2 = bilde1EL;
+        if (bilde1.className === bilde2.className) {
+          resultatEL.textContent = "JA! De var like!";
+          bilde1 = "";
+          bilde2 = "";
+        }
+        else {
+          resultatEL.textContent = "Nei, nei, nei, helt forskjellige!";
+          setTimeout(tilbake, 1000);
+        }
+      }
     }
 
     function snuFunk2() {
       bilde2EL.src = 'media/hjerte.png';
+      if (bilde1 === "") {
+        bilde1 = bilde2EL;
+        resultatEL.textContent = "Snu et bilde til!";
+      }
+      else {
+        bilde2 = bilde2EL;
+        if (bilde1.className === bilde2.className) {
+          resultatEL.textContent = "JA! De var like!";
+          bilde1 = "";
+          bilde2 = "";
+        }
+        else {
+          resultatEL.textContent = "Nei, nei, nei, helt forskjellige!";
+          setTimeout(tilbake, 1000);  
+        }
+      }
     }
 
     function snuFunk3() {
       bilde3EL.src = 'media/sirkel.png';
+      if (bilde1 === "") {
+        bilde1 = bilde3EL;
+        resultatEL.textContent = "Snu et bilde til!";
+      }
+      else {
+        bilde2 = bilde3EL;
+        if (bilde1.className === bilde2.className) {
+          resultatEL.textContent = "JA! De var like!";
+          bilde1 = "";
+          bilde2 = "";
+        }
+        else {
+          resultatEL.textContent = "Nei, nei, nei, helt forskjellige!";
+          setTimeout(tilbake, 1000);  
+        }
+      }
+    }
+
+    function tilbake() {
+      bilde1.src = 'media/kryss.png';
+      bilde2.src = 'media/kryss.png';
+      bilde1 = "";
+      bilde2 = "";
     }
   </script>
 </body>
