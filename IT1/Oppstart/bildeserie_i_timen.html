@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Bildeserie</title>
+</head>
+<body>
+  <img id="bildeID" src="media/firkant.png" alt="Bilde av en firkant" height="100" width="100">
+  <script>
+    let bildeEL = document.getElementById("bildeID");
+
+    bildeEL.addEventListener("click",bildeFunk);
+    function bildeFunk() {
+      bildeEL.src = "media/sirkel.png";
+    }
+  </script>
+</body>
+</html>
