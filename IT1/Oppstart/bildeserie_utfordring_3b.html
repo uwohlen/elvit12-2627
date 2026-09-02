@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <title>U3 Bildeserie</title>
+</head>
+<body>
+  <img id="forrigeID" src="media/forrige.png" alt="Bilde av en pil mot venstre" height="100" width="100" title="Bla tilbake">
+  <img id="firkantID" src="media/firkant.png" alt="Bilde av en firkant" height="100" width="100">
+  <img id="nesteID" src="media/neste.png" alt="Bilde av en pil mot høyre" height="100" width="100" title="Bla til neste">
+  <script>
+    const forrigeEL = document.getElementById("forrigeID");
+    const firkantEL = document.getElementById("firkantID");
+    const nesteEL = document.getElementById("nesteID");
+
+    const bilder = ["firkant", "trekant", "sirkel", "hjerte", "stjerne", "kryss", "rombe", "sekskant"];
+    let indeks = 0;
+
+    forrigeEL.addEventListener("click", forrigeFunk);
+    nesteEL.addEventListener("click", nesteFunk);
+
+    function forrigeFunk() {
+      indeks = indeks - 1;
+      if (indeks < 0) {
+        indeks = bilder.length-1;
+      }
+      console.log(indeks);
+      firkantEL.src = "media/" + bilder[indeks] + ".png";
+    }
+
+
+    function nesteFunk() {
+      indeks = indeks + 1;
+      if (indeks > bilder.length-1) {
+        indeks = 0;
+      }
+      console.log(indeks);
+      firkantEL.src = "media/" + bilder[indeks] + ".png";
+    }
+
+  </script>
+</body>
+</html>
