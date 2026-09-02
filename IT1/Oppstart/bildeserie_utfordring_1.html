@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <title>U1 Bildeserie</title>
+</head>
+<body>
+  <img id="firkantID" src="media/firkant.png" alt="Bilde av en firkant" height="100" width="100">
+  <img id="trekantID" src="media/trekant.png" alt="Bilde av en trekant" height="100" width="100">
+  <script>
+    const firkantEL = document.getElementById("firkantID");
+    const trekantEL = document.getElementById("trekantID");
+
+    firkantEL.addEventListener("click", firkantFunk);
+
+    function firkantFunk() {
+      trekantEL.src = "media/sirkel.png";
+    }
+
+
+  </script>
+</body>
+</html>

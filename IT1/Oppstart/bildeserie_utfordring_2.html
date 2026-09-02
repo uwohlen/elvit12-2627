@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <title>U2 Bildeserie</title>
+</head>
+<body>
+  <img id="firkantID" src="media/firkant.png" alt="Bilde av en firkant" height="100" width="100">
+  <img id="trekantID" src="media/trekant.png" alt="Bilde av en trekant" height="100" width="100">
+  <img id="sirkelID" src="media/sirkel.png" alt="Bilde av en sirkel" height="100" width="100">
+  <script>
+    const firkantEL = document.getElementById("firkantID");
+    const trekantEL = document.getElementById("trekantID");
+    const sirkelEL = document.getElementById("sirkelID");
+
+    firkantEL.addEventListener("click", firkantFunk);
+    sirkelEL.addEventListener("click", sirkelFunk);
+
+    function firkantFunk() {
+      trekantEL.src = "media/stjerne.png";
+    }
+
+
+    function sirkelFunk() {
+      trekantEL.src = "media/hjerte.png";
+    }
+
+  </script>
+</body>
+</html>
