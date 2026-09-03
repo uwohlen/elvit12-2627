@@ -10,4 +10,5 @@ while fortsett:
     fortsett = False
   else:
     print(svar)
-
+  # mer kode utenfor else blir kjørt før slutt
+  print("Mer kode")

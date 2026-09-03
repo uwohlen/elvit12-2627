@@ -8,4 +8,6 @@ while True:
     break
   else:
     print(svar)
+  # mer kode utenfor else blir ikke kjørt før slutt
+  print("Mer kode")
 
