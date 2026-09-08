@@ -21,6 +21,8 @@ while True:
       print("Ladingen angis som et tall.")
     except Exception as tekst:
       print(f"Feilmelding: {tekst}")
+    except:
+      print("whaaat?")
     else:
       print(f"Nytt ladenivå: {ny}")
       batteri = ny
