@@ -1,0 +1,26 @@
+body {
+  background-color: bisque;
+}
+h1 {
+  text-align: center;
+  color: darkblue;
+}
+.innholdCL {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  border: 5px dashed red;
+  padding: 10px;
+}
+.byttCL {
+  height: 100px;
+  width: 100px;
+  border: 2px solid purple;
+  cursor: pointer;
+}
+#bildeID {
+  height: 200px;
+  width: 200px;
+}

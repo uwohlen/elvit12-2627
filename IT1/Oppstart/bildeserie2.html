@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Bildeserie</title>
+  <link rel="icon" href="media/favicon.ico">
+  <link rel="stylesheet" href="bildeserie2.css">
+</head>
+<body>
+  <h1>Bildeserie</h1>
+  <div class="innholdCL">
+    <div class="byttCL"><img id="forrigeID" src="media/forrige.png" alt="Forrige bilde"></div>
+    <img id="bildeID" src="media/firkant.png" alt="Bilde av en firkant">
+    <div class="byttCL"><img id="nesteID" src="media/neste.png" alt="Neste bilde"></div>
+  </div>
+  <script>
+    const forrigeEL = document.getElementById("forrigeID");
+    const nesteEL = document.getElementById("nesteID");
+    const bildeEL = document.getElementById("bildeID");
+    const bilder = ["firkant", "trekant", "sirkel", "hjerte", "stjerne", "kryss", "rombe", "sekskant"];
+    const enet = ["en","en", "en", "et", "en", "et", "en", "en"];
+    let indeks = 0;
+
+    function forrigeFunk() {
+      indeks--;
+      if (indeks < 0) {
+        indeks = bilder.length - 1;
+      }
+      bildeEL.src = "media/" + bilder[indeks] + ".png";
+      bildeEL.alt = "Bilde av " + enet[indeks] + " " + bilder[indeks];
+    }
+
+    function nesteFunk() {
+      indeks++;
+      if (indeks >= bilder.length) {
+        indeks = 0;
+      }
+      bildeEL.src = "media/" + bilder[indeks] + ".png";
+      bildeEL.alt = "Bilde av " + enet[indeks] + " " + bilder[indeks];
+    }
+
+    forrigeEL.addEventListener("click", forrigeFunk);
+    nesteEL.addEventListener("click", nesteFunk);
+
+  </script>
+</body>
+</html>

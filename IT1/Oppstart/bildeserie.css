@@ -1,0 +1,19 @@
+.innholdCL {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  border: 2px solid blue;
+  padding: 10px;
+}
+.byttCL {
+  height: 100px;
+  width: 100px;
+  border: 2px solid purple;
+  cursor: pointer;
+}
+#bildeID {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+}

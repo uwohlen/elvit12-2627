@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Bildeserie</title>
+  <link rel="icon" href="media/favicon.ico">
+  <style>
+    .innholdCL {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 400px;
+      border: 2px solid blue;
+      padding: 10px;
+    }
+    .byttCL {
+      height: 100px;
+      width: 100px;
+      border: 2px solid purple;
+      cursor: pointer;
+    }
+    #bildeID {
+      height: 100px;
+      width: 100px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bildeserie</h1>
+  <div class="innholdCL">
+    <div class="byttCL"><img id="forrigeID" src="media/forrige.png" alt="Bilde av en pil til venstre. Kan klikkes på for å bla i bildene i midten."></div>
+    <img id="bildeID" src="media/firkant.png" alt="Bilde av en firkant">
+    <div class="byttCL"><img id="nesteID" src="media/neste.png" alt="Bilde av en pil til høyre. Kan klikkes på for å bla i bildene i midten."></div>
+  </div>
+  <script>
+    const forrigeEL = document.getElementById("forrigeID");
+    const nesteEL = document.getElementById("nesteID");
+    const bildeEL = document.getElementById("bildeID");
+    const bilder = ["firkant", "trekant", "sirkel", "hjerte", "stjerne", "kryss", "rombe", "sekskant"];
+    const enet = ["en","en", "en", "et", "en", "et", "en", "en"];
+    let indeks = 0;
+
+    function forrigeFunk() {
+      indeks--;
+      if (indeks < 0) {
+        indeks = bilder.length - 1;
+      }
+      bildeEL.src = "media/" + bilder[indeks] + ".png";
+      bildeEL.alt = "Bilde av " + enet[indeks] + " " + bilder[indeks];
+    }
+
+    function nesteFunk() {
+      indeks++;
+      if (indeks >= bilder.length) {
+        indeks = 0;
+      }
+      bildeEL.src = "media/" + bilder[indeks] + ".png";
+      bildeEL.alt = "Bilde av " + enet[indeks] + " " + bilder[indeks];
+    }
+
+    forrigeEL.addEventListener("click", forrigeFunk);
+    nesteEL.addEventListener("click", nesteFunk);
+
+  </script>
+</body>
+</html>
