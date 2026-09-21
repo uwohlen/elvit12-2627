@@ -24,3 +24,10 @@ h1 {
   height: 200px;
   width: 200px;
 }
+.menyCL li {
+  margin: 5px;
+  border: solid black 1px;
+  padding: 5px;
+  width: 300px;
+  background-color: bisque;
+}
