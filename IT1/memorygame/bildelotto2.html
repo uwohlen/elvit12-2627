@@ -5,7 +5,7 @@
   <link rel='icon' href='media/favicon.ico'>
   <link rel="stylesheet" href="bildelotto.css">
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>v1 Bildelotto</title>
+  <title>v2 Bildelotto</title>
   <style>
   </style>
 </head>
@@ -20,14 +20,17 @@
   </ul>
   <script>
     const spillEL = document.getElementById("spillID");
+    const bilder = ["firkant", "trekant", "sirkel", "hjerte", "stjerne", "kryss", "rombe", "sekskant"];
 
-    let imgEL = document.createElement("img");
-    imgEL.src = "media/hjerte.png";
-    imgEL.alt = "Bilde av et hjerte";
-    imgEL.width = "100";
-    imgEL.height = "100";
+    for(let i=0; i<bilder.length; i++) {
+      let imgEL = document.createElement("img");
+      imgEL.src = "media/" + bilder[i] + ".png";
+      imgEL.alt = "Bilde av " + bilder[i];
+      imgEL.width = "100";
+      imgEL.height = "100";
+      spillEL.appendChild(imgEL);
+    }
 
-    spillEL.appendChild(imgEL);
 
   </script>
 </body>

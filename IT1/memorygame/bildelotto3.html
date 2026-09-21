@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <link rel='icon' href='media/favicon.ico'>
+  <link rel="stylesheet" href="bildelotto.css">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>v3 Bildelotto</title>
+  <style>
+    .imgCL {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="spillID">
+
+  </div>
+  <ul class="menyCL">
+    <li><a href="bildelotto1.html">Programmere tagg</a></li>
+    <li><a href="bildelotto2.html">Programmere flere tagger</a></li>
+    <li><a href="bildelotto3.html">addEventListener på alle bilder</a></li>
+  </ul>
+  <script>
+    const spillEL = document.getElementById("spillID");
+    const bilder = ["firkant", "trekant", "sirkel", "hjerte", "stjerne", "femkant", "rombe", "sekskant"];
+    let bilderEL = [];
+
+    for (let i=0; i<bilder.length; i++) {
+      let imgEL = document.createElement("img");
+      imgEL.src = "media/kryss.png";
+      imgEL.dataset.bilde = bilder[i];
+      imgEL.alt = "Bilde av kryss";
+      imgEL.width = "100";
+      imgEL.height = "100";
+      imgEL.className = "imgCL";
+      bilderEL.push(imgEL);
+      spillEL.appendChild(imgEL);
+    }
+
+    for (let i=0; i<bilderEL.length; i++) {
+      bilderEL[i].addEventListener("click",bilderFunk);
+    }
+
+    function bilderFunk(event) {
+      event.target.src = "media/" + event.target.dataset.bilde + ".png";
+      event.target.alt = "Bilde av " + event.target.dataset.bilde;
+    }
+
+
+  </script>
+</body>
+</html>
