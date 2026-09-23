@@ -26,7 +26,7 @@
   <script>
     const spillEL = document.getElementById("spillID");
     const bilder = ["firkant", "trekant", "sirkel", "hjerte", "stjerne", "femkant", "rombe", "sekskant"];
-    let bilderEL = [];
+    let bilderELs = [];
 
     for (let i=0; i<bilder.length; i++) {
       let imgEL = document.createElement("img");
@@ -36,12 +36,12 @@
       imgEL.width = "100";
       imgEL.height = "100";
       imgEL.className = "imgCL";
-      bilderEL.push(imgEL);
+      bilderELs.push(imgEL);
       spillEL.appendChild(imgEL);
     }
 
-    for (let i=0; i<bilderEL.length; i++) {
-      bilderEL[i].addEventListener("click",bilderFunk);
+    for (let i=0; i<bilderELs.length; i++) {
+      bilderELs[i].addEventListener("click",bilderFunk);
     }
 
     function bilderFunk(event) {
