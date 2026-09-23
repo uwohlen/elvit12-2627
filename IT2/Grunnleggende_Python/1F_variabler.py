@@ -1,31 +1,52 @@
+# variabler, kapittel 1F
+
+# global variabel
 tall = 4 
 
-# variabler, kapittel 1F
-a = int(input("skriv tall: "))
+print("test1: if-else")
+a = 3 # 30
 c = None
+
 if a < 10:
   b = 2
-  print(b)
+  tall = 1
+  print(b, tall)
 else:
-  c = 4
+  c = 5
+
 
 if c != None:
   print(c)
 
-#v1 = 3
+print(b)
+print(c)
+print(tall)
+
+print("test2: funksjoner")
+#v1 = None
 
 def f(x):
-  global v1 # men det er bedre å bruke return
+  #global v1 # bruker den eksisterende globale variabelen, eller lager den om den mangler
   v1 = x
-  print(v1)
+  tall = 6
+  print(v1, tall)
 
 f(7)
+print(tall)
+#print(v1)
 
-print(v1)
+print("test3: parametre og return")
+
+v3 = 8
 
 def g(x):
+  x += 1
   return x
 
 
-v4 = g(8)
+v4 = g(v3)
 print(v4)
+print(v3)
+
+v3 = g(v3)
+print(v3)
