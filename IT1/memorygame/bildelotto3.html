@@ -20,12 +20,12 @@
       <a href="bildelotto1.html"><li>Programmere tagg</li></a>
       <a href="bildelotto2.html"><li>Programmere flere tagger</li></a>
       <a href="bildelotto3.html"><li>addEventListener på alle bilder</li></a>
+      <a href="bildelotto3b.html"><li>elementer i array</li></a>
     </ul>
   </nav>
   <script>
     const spillEL = document.getElementById("spillID");
     const bilder = ["firkant", "trekant", "sirkel", "hjerte", "stjerne", "femkant", "rombe", "sekskant"];
-    let bilderEL = [];
 
     for (let i=0; i<bilder.length; i++) {
       let imgEL = document.createElement("img");
@@ -35,12 +35,8 @@
       imgEL.width = "100";
       imgEL.height = "100";
       imgEL.className = "imgCL";
-      bilderEL.push(imgEL);
+      imgEL.addEventListener("click",bilderFunk);
       spillEL.appendChild(imgEL);
-    }
-
-    for (let i=0; i<bilderEL.length; i++) {
-      bilderEL[i].addEventListener("click",bilderFunk);
     }
 
     function bilderFunk(event) {
