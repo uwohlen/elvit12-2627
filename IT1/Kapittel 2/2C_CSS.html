@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='icon' href='media/favicon.ico'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <title>2C CSS</title>
+  <style>
+    @font-face {
+      font-family: 'Open-Dyslexic';
+      src: url('fontOD/OpenDyslexic-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    * {
+      font-family: 'Open-Dyslexic', sans-serif;
+    }
+    div {
+      background-color: lemonchiffon;
+      width: 60%;
+      border: 1px solid brown;
+      margin: 20px auto;
+      padding: 20px 40px;
+      border-radius: 20px 50px;
+      font-size: 2em;
+    }
+    .storStartCL::first-letter {
+      font-size: 3em;
+    }
+    button {
+      font-family: Garamond, serif;
+      font-size: x-large;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    button::first-line {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p class="storStartCL">Tekst som skal gå over flere linjer <i>bla bla bla</i> må skrives inn over flere linjer men dette er mer tekst å skrive på flere linjer ikke bare en linje men flere</p></div>
+  <div>
+    <p>Likte ikke mellomrommet som ble større mellom første og andre linje i divven over da jeg innførte større font på første bokstaven... Så det ser ut til at linjeavstand påvirkes av font-størrelse.</p>
+    <p>Med en ny p-tagg blir det et kontrollert større mellomrom mellom linjene.</p>
+  </div>
+  <button>Pseudo-linje</button>
+  <p>Vanlig tekst som skrives i en p-tagg. Denne p-taggen skrives over flere linjer for å vise at det er mulig å skrive over flere linjer i en p-tagg.
+  </p>
+  <script>
+  </script>
+</body>
+</html>
