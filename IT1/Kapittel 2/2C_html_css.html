@@ -5,15 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    .menyCL li {
+      margin: 5px;
+      border: solid black 1px;
+      padding: 5px;
+      width: 300px;
+      background-color: bisque;
+    }
     html {
       background-color: lightgrey;
-      /*height: 100%;*/
+      height: 100%;
     }
     body {
       background-color: lemonchiffon;
       cursor: pointer;
-      /*margin: 0;*/
-      /*height: 100%;*/
+      margin: 0;
+      height: 100%;
     }
     div {
       border: solid black 20px;
@@ -41,6 +48,12 @@
   </style>
 </head>
 <body id="bodyID">
+  <!-- Selv om html og body er 100 % av høyden, så blir det en kant øverst pga li-taggen har en margin -->
+  <nav class="menyCL">
+    <ul>
+      <a href="../../index.html"><li>Hjem</li></a>
+    </ul>
+  </nav>
   <div id="divID">
     <h1 id="h1_1_ID">Tekst1</h1>
     <h1 id="h1_2_ID">Tekst2</h1>
@@ -49,8 +62,8 @@
   <script>
     let divEL = document.getElementById("divID");
     
-    addEventListener("click",klikkfunk);
-    //divEL.addEventListener("click",klikkfunk);
+    //addEventListener("click",klikkfunk);
+    divEL.addEventListener("click",klikkfunk);
     
     function klikkfunk(event) {
       event.target.style.backgroundColor = "blue";
