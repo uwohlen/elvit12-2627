@@ -1,0 +1,1 @@
+console.log("Denne ble linket i <head> med defer, så den kjører etter at HTML er ferdig lastet inn.");

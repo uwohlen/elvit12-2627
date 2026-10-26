@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='icon' href='media/favicon.ico'>
+  <link rel='stylesheet' href="../Oppstart/hjemMeny.css">
+  <script src="deferscript.js" defer></script>
+  <title>2C Selektor</title>
+  <link rel='stylesheet' href='2C_selektor.css'>
+  <style>
+    div {
+      /*background-color: lemonchiffon !important;*/
+    } 
+    .CL{
+      background-color: darkblue;
+      color: red  ;
+    }
+    #ID4 {
+      background-color: purple;
+      color: red;
+    }
+    #ID5 {
+      background-color: olive;
+      color: red;
+    }
+    div {
+      background-color: lightblue;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      height: 100px;
+    }
+    div:hover, #ID5:hover {
+      background-color: cyan;
+    }
+  </style>
+</head>
+<body>
+  <nav class='menyCL'>
+    <ul>
+      <a href='../../index.html'><li>Hjem</li></a>
+    </ul>
+  </nav>
+  <h1>Test av script</h1>
+  <div>Test1</div>
+  <div class='CL'>Test2</div>
+  <div id='ID3'>Test3</div>
+    <!-- :hover overstyrer ikke style som attributt i html-taggen eller style gitt ved ID -->
+  <div id="ID4" style='background-color: pink;'>Test4</div>
+  <div id="ID5">Test5</div>
+  <script>
+    console.log("Dette er script-taggen i bunnen av <body>")
+  </script>
+</body>
+</html>
