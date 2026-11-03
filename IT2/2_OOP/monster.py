@@ -15,8 +15,8 @@ class Monster:
         print("Mat, søvn og trening gjør underverker. Styrken øker for",self.navn)
         self.styrke = self.styrke + pluss
         
-
 monster1 = Monster("Gnarl",100,80,"Pixiedust")
+
 class Spiller(Monster):
     def __init__(self,navn,helse,styrke, svakhet):
         self.utstyr = []
@@ -25,11 +25,14 @@ class Spiller(Monster):
         #sette inn sjekk på om jeg har det fra før (hvis jeg bare kan ha 1)
         print("Du finner",fant,"og tar det med deg videre")
         self.utstyr.append(fant)
+
 spiller1 = Spiller("Hero",100,50,"Damsels in distress")
+
 print()
 print("Vår helt Hero har ankommet Monsterland, hvor monsteret Gnarl har tatt en prinsesse til fange.")
 print()
 print("Rescue the princess or die trying! Veien framover er klar...")
+
 while (True):
     print()
     print(vars(spiller1))
