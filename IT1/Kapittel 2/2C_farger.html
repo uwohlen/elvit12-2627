@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang='no'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='icon' href='media/favicon.ico'>
+    <link rel='stylesheet' href="../Oppstart/hjemMeny.css">
+  <title>2C Farger</title>
+  <style>
+    #hovedID div {
+      border: 1px solid black;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin: 5px;
+    }
+    #velgerID, #gradID {
+      width: 80%;
+      margin: auto;
+      color: darkorange;
+      background-color: bisque;
+      border: solid 1px currentColor;
+    }
+  </style>
+</head>
+<body>
+  <nav class='menyCL'>
+    <ul>
+      <a href='../../index.html'><li>Hjem</li></a>
+    </ul>
+  </nav>
+  <h1>Test av farger</h1>
+  <div id="hovedID"></div>
+  <div id="velgerID">
+    <h2>Velg en farge</h2>
+    <input id="fargeID" type="color">
+  </div>
+  <div id="gradID">
+    <p>Rød: <input id="rID" type="range" min="0" max="255" step="1"></p>
+    <p>Grønn: <input id="gID" type="range" min="0" max="255" step="1"></p>
+    <p>Blå<input id="bID" type="range" min="0" max="255" step="1"></p>
+  </div>
+  <script>
+    let hovedEL = document.getElementById("hovedID");
+    let velgerEL = document.getElementById("velgerID");
+    let fargeEL = document.getElementById("fargeID");
+    let gradEL = document.getElementById("gradID");
+    let rEL = document.getElementById("rID");
+    let gEL = document.getElementById("gID");
+    let bEL = document.getElementById("bID");
+
+    let farger = ["red", "pink", "orange", "yellow", "green", "brown", "purple", "blue", "gray", "black"];
+    
+    for (let i = 0; i < farger.length; i++) { 
+      let fargeEL = document.createElement("div");
+      fargeEL.style.backgroundColor = farger[i];
+      hovedEL.appendChild(fargeEL);
+    }
+    
+    hovedEL.appendChild(document.createElement("br"));
+    hovedEL.appendChild(document.createElement("br"));
+    
+    for (let i = 0; i < 360; i += 10) { 
+      let fargeEL = document.createElement("div");
+      fargeEL.style.backgroundColor = `hsl(${i}, 100%, 50%)`;
+      hovedEL.appendChild(fargeEL);
+    }
+    
+    hovedEL.appendChild(document.createElement("br"));
+    hovedEL.appendChild(document.createElement("br"));
+    
+    for (let i = 0; i < 360; i += 10) { 
+      let fargeEL = document.createElement("div");
+      fargeEL.style.backgroundColor = `hsl(${i}, ${i/360 * 100}%, 50%)`;
+      hovedEL.appendChild(fargeEL);
+    }
+    
+    hovedEL.appendChild(document.createElement("br"));
+    hovedEL.appendChild(document.createElement("br"));
+    
+    for (let i = 0; i < 360; i += 10) { 
+      let fargeEL = document.createElement("div");
+      fargeEL.style.backgroundColor = `hsl(${i}, ${(360-i)/360 * 100}%, 50%)`;
+      hovedEL.appendChild(fargeEL);
+    }
+    
+    hovedEL.appendChild(document.createElement("br"));
+    hovedEL.appendChild(document.createElement("br"));
+    
+    for (let i = 0; i < 360; i += 10) { 
+      let fargeEL = document.createElement("div");
+      fargeEL.style.backgroundColor = `hsl(${i}, 100%, ${i/360 * 100}%)`;
+      hovedEL.appendChild(fargeEL);
+    }
+    
+    hovedEL.appendChild(document.createElement("br"));
+    hovedEL.appendChild(document.createElement("br"));
+    
+    for (let i = 0; i < 360; i += 10) { 
+      let fargeEL = document.createElement("div");
+      fargeEL.style.backgroundColor = `hsl(${i}, 100%, ${(360-i)/360 * 100}%)`;
+      hovedEL.appendChild(fargeEL);
+    }
+
+    fargeEL.addEventListener("change",fargeFunk);
+
+    function fargeFunk(event) {
+      console.log(event.target.value);
+      velgerEL.style.backgroundColor = event.target.value;
+    }
+
+    rEL.addEventListener("change",gradFunk);
+    gEL.addEventListener("change",gradFunk);
+    bEL.addEventListener("change",gradFunk);
+
+    function gradFunk(event) {
+
+      let farge = "rgb(" + rEL.value + "," + gEL.value + "," + bEL.value +")";
+      gradEL.style.backgroundColor = farge;
+    }
+  </script>
+</body>
+</html>
