@@ -3,18 +3,18 @@
 
 class Dyr:
   def __init__(self,navn,rase,farge,bolig="Inne"):
-    self.__navn = navn
+    self.navn = navn
     self.rase = rase
     self.farge = farge
     self.bolig = bolig
     self.alder = 0
   
   def dyr_info(self):
-    print(self.__navn,"er en",self.farge.lower(),self.rase.lower(),"som bor",self.bolig.lower())
+    print(self.navn,"er en",self.farge.lower(),self.rase.lower(),"som bor",self.bolig.lower())
 
   def aldring(self,antall):  
     self.alder += antall
-    print(self.__navn,"er nå",self.alder,"år")
+    print(self.navn,"er nå",self.alder,"år")
 
 
 # Arv
@@ -25,14 +25,14 @@ class Katt(Dyr):   # Legg merke til parentes med navnet på klassen som det arve
     self.liv = liv                          # Denne egenskapen er ny, kommer i tillegg til de som var i Dyr
   
   def snakk(self):                          # Ny metode for katten
-    print(self._Dyr__navn,'sier "Mjau"')
+    print(self.navn,'sier "Mjau"')
 
   def antall_liv(self):
     self.liv += 1
     if self.liv >= 9:
-      print(self._Dyr__navn,"har nå brukt alle sine liv :(")
+      print(self.navn,"har nå brukt alle sine liv :(")
     else:
-      print(self._Dyr__navn,"har nå brukt",self.liv,"liv.")
+      print(self.navn,"har nå brukt",self.liv,"liv.")
 
 
 class Hund(Dyr):
@@ -47,7 +47,7 @@ class Hund(Dyr):
 mine_dyr = [
   Katt("Silkesvarten","Norsk skogkatt","Svart",2,"I stallen"),
   Katt("Tigergutt","Norsk skogkatt","Stripete grå-svart",1),
-  #Hund("Kaisa","Labrador retriever","Svart")
+  Hund("Kaisa","Labrador retriever","Svart")
 ]
 
 for dyr in mine_dyr:
@@ -55,5 +55,5 @@ for dyr in mine_dyr:
   dyr.snakk() # samme metode-navn vil gi ulikt uttrykk pga polymorfisme
   print(type(dyr))
 
-for i in range(10):
-  mine_dyr[0].antall_liv() # metoden er bare for katter
+for i in range(2):
+  mine_dyr[i].antall_liv() # metoden er bare for katter
