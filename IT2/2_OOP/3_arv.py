@@ -45,8 +45,8 @@ class Hund(Dyr):
 
 # kattene har ett argument mer enn hunden... for kattene kan ha 9 liv:
 mine_dyr = [
-  Katt("Silkesvarten","Norsk skogkatt","Svart",2,"I stallen"),
-  Katt("Tigergutt","Norsk skogkatt","Stripete grå-svart",1),
+  Katt("Silkesvarten","Norsk skogkatt","Svart",0,"I stallen"),
+  Katt("Tigergutt","Norsk skogkatt","Stripete grå-svart",9),
   Hund("Kaisa","Labrador retriever","Svart")
 ]
 
@@ -57,3 +57,6 @@ for dyr in mine_dyr:
 
 for i in range(2):
   mine_dyr[i].antall_liv() # metoden er bare for katter
+
+for i in range(10):
+  mine_dyr[0].antall_liv() # metoden er bare for katter
